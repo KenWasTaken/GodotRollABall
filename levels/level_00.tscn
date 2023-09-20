@@ -1,0 +1,221 @@
+[gd_scene load_steps=8 format=3 uid="uid://dmj81wmg7tvhl"]
+
+[ext_resource type="Texture2D" uid="uid://b0q1atf0qxkuu" path="res://aa_art/PNG/Double (128px)/tile.png" id="1_17ibk"]
+[ext_resource type="Texture2D" uid="uid://dwjhgj2wo4iew" path="res://aa_art/PNG/Double (128px)/tiles.png" id="2_1w4q6"]
+[ext_resource type="PackedScene" uid="uid://0e6jqef2nr68" path="res://scenes/wall_piece.tscn" id="6_agilx"]
+[ext_resource type="PackedScene" uid="uid://utq4c62u8h4k" path="res://scenes/rigid_ball.tscn" id="6_g4kik"]
+[ext_resource type="PackedScene" uid="uid://cughtxa2o3ehy" path="res://scenes/pickup.tscn" id="7_2fuar"]
+[ext_resource type="Script" path="res://scripts/game_control.gd" id="7_ew86g"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ll2af"]
+font_size = 60
+font_color = Color(1, 0.952941, 0.462745, 1)
+
+[node name="Level_00" type="Node2D"]
+
+[node name="Tile" type="Sprite2D" parent="."]
+modulate = Color(0.454902, 0.784314, 0.584314, 1)
+position = Vector2(564, 328)
+scale = Vector2(9.4375, 5.5)
+texture = ExtResource("1_17ibk")
+
+[node name="Tiles" type="Sprite2D" parent="."]
+position = Vector2(312, -216)
+texture = ExtResource("2_1w4q6")
+
+[node name="Pickups" type="Node2D" parent="."]
+
+[node name="Pickup" parent="Pickups" instance=ExtResource("7_2fuar")]
+
+[node name="Pickup2" parent="Pickups" instance=ExtResource("7_2fuar")]
+position = Vector2(168, 400)
+
+[node name="Pickup3" parent="Pickups" instance=ExtResource("7_2fuar")]
+position = Vector2(448, 512)
+
+[node name="Pickup4" parent="Pickups" instance=ExtResource("7_2fuar")]
+position = Vector2(832, 448)
+
+[node name="Pickup5" parent="Pickups" instance=ExtResource("7_2fuar")]
+position = Vector2(960, 368)
+
+[node name="Pickup6" parent="Pickups" instance=ExtResource("7_2fuar")]
+position = Vector2(840, 200)
+
+[node name="Pickup7" parent="Pickups" instance=ExtResource("7_2fuar")]
+position = Vector2(568, 144)
+
+[node name="Enviornment" type="Node2D" parent="."]
+
+[node name="TopWall" type="Node2D" parent="Enviornment"]
+
+[node name="WallPiece" parent="Enviornment/TopWall" instance=ExtResource("6_agilx")]
+position = Vector2(37, 0)
+
+[node name="WallPiece2" parent="Enviornment/TopWall" instance=ExtResource("6_agilx")]
+position = Vector2(157, 0)
+
+[node name="WallPiece3" parent="Enviornment/TopWall" instance=ExtResource("6_agilx")]
+position = Vector2(277, 0)
+
+[node name="WallPiece4" parent="Enviornment/TopWall" instance=ExtResource("6_agilx")]
+position = Vector2(397, 0)
+
+[node name="WallPiece5" parent="Enviornment/TopWall" instance=ExtResource("6_agilx")]
+position = Vector2(517, 0)
+
+[node name="WallPiece6" parent="Enviornment/TopWall" instance=ExtResource("6_agilx")]
+position = Vector2(637, 0)
+
+[node name="WallPiece7" parent="Enviornment/TopWall" instance=ExtResource("6_agilx")]
+position = Vector2(757, 0)
+
+[node name="WallPiece8" parent="Enviornment/TopWall" instance=ExtResource("6_agilx")]
+position = Vector2(877, 0)
+
+[node name="WallPiece9" parent="Enviornment/TopWall" instance=ExtResource("6_agilx")]
+position = Vector2(997, 0)
+
+[node name="WallPiece10" parent="Enviornment/TopWall" instance=ExtResource("6_agilx")]
+position = Vector2(1117, 0)
+
+[node name="Bottom Wall" type="Node2D" parent="Enviornment"]
+position = Vector2(0, 648)
+
+[node name="WallPiece" parent="Enviornment/Bottom Wall" instance=ExtResource("6_agilx")]
+position = Vector2(37, 0)
+
+[node name="WallPiece2" parent="Enviornment/Bottom Wall" instance=ExtResource("6_agilx")]
+position = Vector2(157, 0)
+
+[node name="WallPiece3" parent="Enviornment/Bottom Wall" instance=ExtResource("6_agilx")]
+position = Vector2(277, 0)
+
+[node name="WallPiece4" parent="Enviornment/Bottom Wall" instance=ExtResource("6_agilx")]
+position = Vector2(397, 0)
+
+[node name="WallPiece5" parent="Enviornment/Bottom Wall" instance=ExtResource("6_agilx")]
+position = Vector2(517, 0)
+
+[node name="WallPiece6" parent="Enviornment/Bottom Wall" instance=ExtResource("6_agilx")]
+position = Vector2(637, 0)
+
+[node name="WallPiece7" parent="Enviornment/Bottom Wall" instance=ExtResource("6_agilx")]
+position = Vector2(757, 0)
+
+[node name="WallPiece8" parent="Enviornment/Bottom Wall" instance=ExtResource("6_agilx")]
+position = Vector2(877, 0)
+
+[node name="WallPiece9" parent="Enviornment/Bottom Wall" instance=ExtResource("6_agilx")]
+position = Vector2(997, 0)
+
+[node name="WallPiece10" parent="Enviornment/Bottom Wall" instance=ExtResource("6_agilx")]
+position = Vector2(1117, 0)
+
+[node name="LeftWall" type="Node2D" parent="Enviornment"]
+position = Vector2(0, 876)
+rotation = -1.5708
+
+[node name="WallPiece" parent="Enviornment/LeftWall" instance=ExtResource("6_agilx")]
+position = Vector2(37, 0)
+
+[node name="WallPiece2" parent="Enviornment/LeftWall" instance=ExtResource("6_agilx")]
+position = Vector2(157, 0)
+
+[node name="WallPiece3" parent="Enviornment/LeftWall" instance=ExtResource("6_agilx")]
+position = Vector2(277, 0)
+
+[node name="WallPiece4" parent="Enviornment/LeftWall" instance=ExtResource("6_agilx")]
+position = Vector2(397, 0)
+
+[node name="WallPiece5" parent="Enviornment/LeftWall" instance=ExtResource("6_agilx")]
+position = Vector2(517, 0)
+
+[node name="WallPiece6" parent="Enviornment/LeftWall" instance=ExtResource("6_agilx")]
+position = Vector2(637, 0)
+
+[node name="WallPiece7" parent="Enviornment/LeftWall" instance=ExtResource("6_agilx")]
+position = Vector2(757, 0)
+
+[node name="WallPiece8" parent="Enviornment/LeftWall" instance=ExtResource("6_agilx")]
+position = Vector2(877, 0)
+
+[node name="WallPiece9" parent="Enviornment/LeftWall" instance=ExtResource("6_agilx")]
+position = Vector2(997, 0)
+
+[node name="WallPiece10" parent="Enviornment/LeftWall" instance=ExtResource("6_agilx")]
+position = Vector2(1117, 0)
+
+[node name="RightWall" type="Node2D" parent="Enviornment"]
+position = Vector2(1152, 872)
+rotation = -1.5708
+
+[node name="WallPiece" parent="Enviornment/RightWall" instance=ExtResource("6_agilx")]
+position = Vector2(37, 0)
+
+[node name="WallPiece2" parent="Enviornment/RightWall" instance=ExtResource("6_agilx")]
+position = Vector2(157, 0)
+
+[node name="WallPiece3" parent="Enviornment/RightWall" instance=ExtResource("6_agilx")]
+position = Vector2(277, 0)
+
+[node name="WallPiece4" parent="Enviornment/RightWall" instance=ExtResource("6_agilx")]
+position = Vector2(397, 0)
+
+[node name="WallPiece5" parent="Enviornment/RightWall" instance=ExtResource("6_agilx")]
+position = Vector2(517, 0)
+
+[node name="WallPiece6" parent="Enviornment/RightWall" instance=ExtResource("6_agilx")]
+position = Vector2(637, 0)
+
+[node name="WallPiece7" parent="Enviornment/RightWall" instance=ExtResource("6_agilx")]
+position = Vector2(757, 0)
+
+[node name="WallPiece8" parent="Enviornment/RightWall" instance=ExtResource("6_agilx")]
+position = Vector2(877, 0)
+
+[node name="WallPiece9" parent="Enviornment/RightWall" instance=ExtResource("6_agilx")]
+position = Vector2(997, 0)
+
+[node name="WallPiece10" parent="Enviornment/RightWall" instance=ExtResource("6_agilx")]
+position = Vector2(1117, 0)
+
+[node name="GameControl" type="CanvasLayer" parent="." groups=["GameController"]]
+script = ExtResource("7_ew86g")
+
+[node name="ScoreLabel" type="Label" parent="GameControl"]
+modulate = Color(0.839216, 0.843137, 0.52549, 1)
+offset_right = 52.0
+offset_bottom = 26.0
+text = "Score: "
+label_settings = SubResource("LabelSettings_ll2af")
+
+[node name="ScoreVal" type="Label" parent="GameControl"]
+modulate = Color(0.839216, 0.843137, 0.52549, 1)
+offset_left = 194.0
+offset_right = 398.0
+offset_bottom = 86.0
+text = "123456"
+label_settings = SubResource("LabelSettings_ll2af")
+
+[node name="YouWinPanel" type="Panel" parent="GameControl"]
+offset_right = 1152.0
+offset_bottom = 688.0
+
+[node name="YouWin" type="Label" parent="GameControl/YouWinPanel"]
+modulate = Color(0.839216, 0.843137, 0.52549, 1)
+layout_mode = 0
+offset_left = 461.0
+offset_top = 272.0
+offset_right = 733.0
+offset_bottom = 358.0
+text = "You Win !"
+label_settings = SubResource("LabelSettings_ll2af")
+
+[node name="Timer" type="Timer" parent="GameControl"]
+wait_time = 3.0
+one_shot = true
+
+[node name="RigidBall" parent="." instance=ExtResource("6_g4kik")]
+
+[connection signal="timeout" from="GameControl/Timer" to="GameControl" method="_on_timer_timeout"]

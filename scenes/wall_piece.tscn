@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://0e6jqef2nr68"]
+
+[ext_resource type="Texture2D" uid="uid://dl5jjvuum47hn" path="res://aa_art/PNG/Double (128px)/tiles_decorative.png" id="1_l3f7j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vpht3"]
+size = Vector2(126, 126)
+
+[node name="WallPiece" type="StaticBody2D"]
+modulate = Color(0.870588, 0.47451, 0.647059, 1)
+position = Vector2(63, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_vpht3")
+
+[node name="TilesDecorative" type="Sprite2D" parent="."]
+texture = ExtResource("1_l3f7j")

@@ -1,0 +1,87 @@
+[gd_scene load_steps=7 format=3 uid="uid://cughtxa2o3ehy"]
+
+[ext_resource type="Script" path="res://scripts/pickup.gd" id="1_bcie5"]
+[ext_resource type="Texture2D" uid="uid://d3qcyko1sp7c3" path="res://aa_art/PNG/Double (128px)/plants.png" id="1_dgxpg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1sh7i"]
+radius = 48.0416
+
+[sub_resource type="Animation" id="Animation_p5umo"]
+resource_name = "Spin"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Plants:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Plants:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.785398, 4.79966, 6.37045]
+}
+
+[sub_resource type="Animation" id="Animation_36duy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Plants:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Plants:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_88gy7"]
+_data = {
+"RESET": SubResource("Animation_36duy"),
+"Spin": SubResource("Animation_p5umo")
+}
+
+[node name="Pickup" type="Area2D" groups=["Pickup"]]
+position = Vector2(320, 262)
+script = ExtResource("1_bcie5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1sh7i")
+
+[node name="Plants" type="Sprite2D" parent="."]
+texture = ExtResource("1_dgxpg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Spin"
+libraries = {
+"": SubResource("AnimationLibrary_88gy7")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
